@@ -1,0 +1,22 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    text-align: center;
+    margin-top: 80px;
+}
+
+h1 {
+    padding-bottom: 60px;
+}
+
+.spans {
+    grid-column-start: auto;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
