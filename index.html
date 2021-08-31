@@ -10,6 +10,19 @@
 </head>
 <body>
 <h1>Personal Library</h1>
+<div>
+    <button id="addBookBtn" class="hvr-ripple-out">Add Book</button>
+    <form>
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="number" id="pages" placeholder="Number of Pages" required>
+        <span id="isRead">Have you read it?</span>
+        <select name="dropdown" id="didRead">
+            <option value = "Yes" selected>Yes</option>
+            <option value = "No">No</option>
+         </select>
+    </form>
+</div>
 <div id="content">
     <span class="spans">
         <strong>Title</strong>

@@ -1,7 +1,7 @@
 class Book {
     constructor(
         title = 'Unknown',
-        author = 'unknown',
+        author = 'Unknown',
         pages = '0',
         read = 'Unknown'
     ) {
@@ -31,6 +31,31 @@ library1.addBook(book2);
 library1.addBook(book3);
 
 const content = document.querySelector('#content');
+const addBookBtn = document.getElementById('addBookBtn');
+
+addBookBtn.onclick = () => {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const isRead = document.getElementById('didRead').value;
+
+    library1.addBook(new Book(title, author, pages, isRead));
+
+    const newTitle = document.createElement('span');
+    const newAuthor = document.createElement('span');
+    const newPages = document.createElement('span');
+    const newRead = document.createElement('span');
+
+    newTitle.innerHTML = title;
+    newAuthor.innerHTML = author;
+    newPages.innerHTML = pages;
+    newRead.innerHTML = isRead;
+
+    content.appendChild(newTitle);
+    content.appendChild(newAuthor);
+    content.appendChild(newPages);
+    content.appendChild(newRead);
+}
 
 for (let i = 0; i < library1.books.length; i++){
     const newTitle = document.createElement('span');

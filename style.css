@@ -20,3 +20,50 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
+
+button {
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ed3330;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+button:hover {
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+input {
+    margin: 5px;
+    padding-bottom: 5px;
+}
+
+form {
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    flex-direction: column;
+    align-self: center;
+}
+
+#didRead {
+    width: 290px;
+    height: 23px;
+    margin: auto;
+}
+
+#isRead {
+    margin: 10px;
+}
