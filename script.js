@@ -23,15 +23,17 @@ class Library {
 }
 
 const library1 = new Library();
-const book1 = new Book('Hobbit', 'Tolkien', '321', 'Yes');
-const book2 = new Book('Juramentada', 'Sanderson', '1400', 'No');
-const book3 = new Book('A Clockwork Orange', 'Robin Williams', '420', 'Yes');
+const book1 = new Book('Hobbit', 'J. R. R. Tolkien', '285', 'Yes');
+const book2 = new Book('Oathbringer', 'B. Sanderson', '1400', 'Yes');
+const book3 = new Book('A Clockwork Orange', 'A. Burgess', '192', 'No');
 library1.addBook(book1);
 library1.addBook(book2);
 library1.addBook(book3);
 
 const content = document.querySelector('#content');
 const addBookBtn = document.getElementById('addBookBtn');
+
+let counter = 3;
 
 addBookBtn.onclick = () => {
     const title = document.getElementById('title').value;
@@ -45,16 +47,37 @@ addBookBtn.onclick = () => {
     const newAuthor = document.createElement('span');
     const newPages = document.createElement('span');
     const newRead = document.createElement('span');
+    const newButton = document.createElement('button');
 
     newTitle.innerHTML = title;
     newAuthor.innerHTML = author;
     newPages.innerHTML = pages;
     newRead.innerHTML = isRead;
 
+    newButton.id = 'bookN' + counter;
+    newButton.classList.add('rmvBtns');
+    newButton.classList.add('hvr-ripple-out');
+
     content.appendChild(newTitle);
     content.appendChild(newAuthor);
     content.appendChild(newPages);
     content.appendChild(newRead);
+    content.appendChild(newButton);
+
+    counter += 1;
+
+    newButton.onclick = () => {
+        newTitle.remove();
+        newAuthor.remove();
+        newPages.remove();
+        newRead.remove();
+        newButton.remove();
+    }
+    
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
+    document.getElementById('didRead').value = 'No';
 }
 
 for (let i = 0; i < library1.books.length; i++){
@@ -62,14 +85,29 @@ for (let i = 0; i < library1.books.length; i++){
     const newAuthor = document.createElement('span');
     const newPages = document.createElement('span');
     const newRead = document.createElement('span');
+    const newButton = document.createElement('button');
 
     newTitle.innerHTML = library1.books[i].title;
     newAuthor.innerHTML = library1.books[i].author;
     newPages.innerHTML = library1.books[i].pages;
     newRead.innerHTML = library1.books[i].read;
 
+    newButton.id = 'bookN' + i;
+    newButton.classList.add('rmvBtns');
+    newButton.classList.add('hvr-ripple-out');
+
     content.appendChild(newTitle);
     content.appendChild(newAuthor);
     content.appendChild(newPages);
     content.appendChild(newRead);
+    content.appendChild(newButton);
+
+    newButton.onclick = () => {
+        newTitle.remove();
+        newAuthor.remove();
+        newPages.remove();
+        newRead.remove();
+        newButton.remove();
+    }
 }
+
